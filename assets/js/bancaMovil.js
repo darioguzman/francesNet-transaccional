@@ -957,6 +957,7 @@ function callAjax(url, data, callback){
 			success : callback,
 			error : function(jqXHR, textStatus,	errorThrown) {
 				$.mobile.loading('hide');
+				alert("textStatus: "+ textStatus+ ", errorThrown: "+ errorThrown);
 				console.log("textStatus: "+ textStatus+ ", errorThrown: "+ errorThrown);
 			}
 		});
