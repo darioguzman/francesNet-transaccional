@@ -2,13 +2,13 @@
 <widget xmlns		= "http://www.w3.org/ns/widgets"
 		xmlns:gap	= "http://phonegap.com/ns/1.0"
 		xmlns:rim	="http://www.blackberry.com/ns/widgets"
-		id		= "ar.com.bbva.francesgo.frontend.mobile"
+		id		= "org.mitre.dsmiley.httpproxy"
 		version 	= "0.0.1">
 
-	<name>BBVA FRANCES</name>
+	<name>Banca Móvil</name>
 
 	<description>
-		Frances Mobile Client for BVBA Frances Argentina
+		Banca Móvil Client for BVBA Frances Argentina
 	</description>
 
 	<author href="http://www.artdecode.com.ar"

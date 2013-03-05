@@ -1,8 +1,9 @@
-baseUrl = 'http://localhost:8080/francesNet-transaccional/mod/mobile/';
-//baseUrl = 'https://bbvawebqa.bancofrances.com.ar/fnet/mod/mobile/';
+//baseUrl = 'http://localhost:8080/francesNet-transaccional/mod/mobile/';
+baseUrl = 'https://bbvawebqa.bancofrances.com.ar/fnet/mod/mobile/';
 //baseUrl = 'http://192.168.1.107:8080/francesNet-transaccional/mod/mobile/';
 //baseUrlLocal = 'http://192.168.1.107:8080/francesGo2-portal/';
-baseUrlLocal = 'http://localhost:8080/francesGo2-portal/';
+//baseUrlLocal = 'http://localhost:8080/francesGo2-portal/';
+baseUrlLocal = 'https://bbvawebqa.bancofrances.com.ar/francesGo2-portal/
 //	baseUrlLocal = 'http://m.francesgo.com.ar/francesNet-transaccional/mod/mobile/';
 
 	

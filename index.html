@@ -1,192 +1,423 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Francés Go</title>
+    <title>Banca Móvil</title>
     <meta charset=utf-8 />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="content-type" content="text/html;charset=utf-8" />
     <meta name="HandheldFriendly" content="True" />
 	<meta name="x-blackberry-defaultHoverEffect" content="true" /> 
+	<meta http-equiv="x-rim-auto-match" content="none">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" href="assets/stylesheets/theme.css" />
+    <link rel="stylesheet" href="assets/stylesheets/francesnet.min.css" />
     <link href='assets/stylesheets/jquery.mobile.theme-1.2.0.css' rel='stylesheet' id="theme-css"/>
-    <link href='assets/stylesheets/jquery.mobile-1.2.0.css' rel='stylesheet' />
+    <link href='assets/stylesheets/jquery.mobile.modificado-1.2.0.css' rel='stylesheet' />
+    <link href='assets/stylesheets/francesnet.css' rel='stylesheet' />
+    <link href='assets/stylesheets/style.css' rel='stylesheet' />
 	<script type="text/javascript" src="assets/js/jquery-1.8.2.js"></script>
 	<script type="text/javascript" src="assets/js/jquery.mobile-1.2.0.min.js"></script>
-	<script type="text/javascript" src="assets/js/fnet.js"></script>
+	<script type="text/javascript" src="assets/js/bancaMovil.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no" />
   </head>
 <body>
+	
+									<!-- 	LOGIN -->
+	<div data-role='page' id='login'  data-role='fieldcontain'>
+		<img class='imgLogoBBVA' src='assets/images/page-header-bbva.png' />
+	<h4>Banca Móvil</h4>
+		
+      <div class='ui-content ui-scrollview-clip' data-role='content' data-scroll='y' role='main'  data-role='fieldcontain'>
+        
+        <form id="login-form" name="login-form">
+   
+<!--           <div data-mini='true' data-role='fieldcontain'> -->
+<!--           <table class="registracion"> -->
+<!--           <tbody> -->
+<!--           	<tr> -->
+<!--           		<td> -->
+<!--           			<label data-mini='true' for='login-tiposDocumento'>Documento</label> -->
+<!--           		</td> -->
+          			
+<!--           		<td> -->
+<!--        				<select id='login-tiposDocumento' data-mini='true' name='tipodoc' data-native-menu="false" class="required" > -->
+<!--            				<option data-placeholder="true" value="DNI">DNI</option> -->
+<!--             		</select> -->
+<!--            		</td> -->
+<!--             </tr> -->
+<!--             <tr> -->
+            	
+<!--             	<td> -->
+<!--             		<input data-mini='true' id='login-dni' type='text' value='' name='nrodoc' class="required" maxlength="8" max="8" /> -->
+<!--             	</td> -->
+<!--             </tr> -->
+<!--           </tbody> -->
+<!--           </table> -->
+<!--           </div> -->
 
-   <div data-role="page" id='page1' data-theme="a">
-		<div data-position='fixed' data-role='header' data-tap-toggle="false"  screen="true" style='position:fixed' >
-        	<a data-icon='arrow-l' href='#' onclick='history.back(-1)' data-transition="slide" data-direction=”reverse” >Atrás</a>
-        	<h1>Menu principal</h1>
-    	</div>
-		<div data-role="content">
-			<ul data-role="listview">
-				<li><a data-role='button' href='#page2' data-transition="slide">Buscar Provincias</a></li>
-				<li><a data-role='button' href='#page3' data-transition="slide">Buscar Localidades</a></li>
-				<li><a data-role='button' href='#page4' data-transition="slide">Buscar Barrios</a></li>
-			</ul>
-           		
-         
-    	</div>
-	</div>
-     
-    <div data-theme="b" data-role="page" id="page2">
-    	<div data-position='fixed' data-role='header' data-tap-toggle='false' style='position:fixed'>
-			<a data-icon='arrow-l' href='#page1' data-transition="slide" data-direction=”reverse” >Atrás</a>
-        	<h1>Provincias</h1>
-    	</div>
-    	
-    	<div data-role="content">
-    		<div >
-    			<a id='findProv' data-role="button" href='#' data-transition="slide">Todas las provincias</a>
-    		</div>
-    	
-   			<div class='ui-content ui-scrollview-clip' data-role='content' data-scroll='y' role='main'>
-         		
-         		<ul id="ul-prov" data-inset='true' data-role='listview'>
-	  	        </ul>
-    		</div>
-    	</div>
-   	</div>
-   	
-   	 <div data-theme="c" data-role="page" id="page3">
-    	<div data-position='fixed' data-role='header' data-tap-toggle='false' style='position:fixed'>
-			<a data-icon='arrow-l' href='#page1' data-transition="slide" data-direction=”reverse” >Atrás</a>
-        	<h1>Localidades</h1>
-    	</div>
-    	
-    	<div data-role="content">
-    		<div >
-    			<a id='findLoc' data-role="button" href='#' data-transition="slide">Todas las localidades</a>
-    		</div>
-    	
-   			<div class='ui-content ui-scrollview-clip' data-role='content' data-scroll='y' role='main'>
-         		
-         		<ul id="ul-loc" data-inset='true' data-role='listview'>
-	  	        </ul>
-    		</div>
-    	</div>
-   	</div>
-   	
-   	 <div data-theme="e" data-role="page" id="page4">
-    	<div data-position='fixed' data-role='header' data-tap-toggle='false' style='position:fixed'>
-			<a data-icon='arrow-l' href='#page1' data-transition="slide" data-direction=”reverse” >Atrás</a>
-        	<h1>Barrios</h1>
-    	</div>
-    	
-    	<div data-role="content">
-    		<div >
-    			<a id='findBar' data-role="button" href='#' data-transition="slide">Todos los barrios</a>
-    		</div>
-    	
-   			<div class='ui-content ui-scrollview-clip' data-role='content' data-scroll='y' role='main'>
-         		
-         		<ul id="ul-bar" data-inset='true' data-role='listview'>
-	  	        </ul>
-    		</div>
-    	</div>
-   	</div>
-   	
-   	
+		<div data-mini='true' data-role='fieldcontain'>
+            <label data-mini='true' for='login-tiposDocumento'>Documento</label>
+            <select id='login-tiposDocumento' data-mini='true' name='tipodoc' data-native-menu="false" class="required" >
+          			<option data-placeholder="true" value="DNI">DNI</option>
+           	</select>
+           	<br/>
+           	<input data-mini='true' id='login-dni' type='number' value='' name='nrodoc' class="required" maxlength="8" max="8" />
+          </div>
+          
+          <div data-mini='true' data-role='fieldcontain'>
+            <label data-mini='true' for='login-clave'>Clave</label>
+            <input data-mini='true' id='login-clave' name='clave' type='number' maxlength="4" max="4" value='' class="required" />
+          </div>
+          
+        </form>
+        
+      </div>
+        <div class='submit'  data-role='fieldcontain'>
+          <a data-role='button' class='boton' id="login-confirmation-link" data-transition="slide" data-inline='true'>Ingresar</a>
+        </div>
       
+         <div data-mini='true'  data-role='fieldcontain'>
+         		<p>Ayuda</p>
+         		
+         		<h6>Contactar a BBVA Francés</h6>
+         </div>
+         
+         <div data-mini='true' >
+         	<a data-role="button" class='boton' href="#dialog-llamada-bbva-frances" data-rel="dialog" id="llamar-bbva-frances" data-inline='true'>Llamar a línea Francés</a>
+         </div>
+    </div>
+		
+
+							<!--     FIN LOGIN -->
+					
+							<!--DIALOGO DE LLAMADA -->
+
+    <div  data-role='page' id="dialog-llamada-bbva-frances" >
+    	<div class='background'>
+    	<h5>¿Llamar a 0800-333-0303?</h5>
+	    	<a data-role='button' class='boton' href='wtai://wp/mc;+08003330303'>Aceptar</a>
+	    	<a data-role='button' class='boton' href='#login'>Cancelar</a>
+    	</div>
+    </div>
+
+    <div data-role='page' id="dialog-clave-vencida"class='background' >
+		<div data-role='header' id='dialog-header' class='background'>
+			<h5>Clave vencida</h5>
+		</div>
+		<div id='datos-usuario'>
+		
+		</div>
+	</div>
+
+	<div data-role='page' id="dialog-error" class='background'>
+		<div id='error' class='background'>
+
+		</div>
+	</div>
+
+
+	<!--     Posicion global -->
+	<div data-role='page' id='posicion-global'>
+		<div data-position='fixed' data-role='header' data-tap-toggle="false" screen="true" style='position: fixed;'>
+		<img class='imgLogoBBVA' src='assets/images/page-header-bbva.png' />
+		<div data-position='fixed'  class='recortes'  data-tap-toggle="false" screen="true" style='position: static;'>
+		<img class='recortes' src='assets/images/recorte-logo.png' />
+			<a href='#posicion-global' id='boton-posicion-global' data-transition="slide" class='left imgLogosPosicionGlobal selectedPosicionGlobal ui-btn-left ui-btn ui-shadow ui-btn-corner-all ui-btn-up-a' > </a> 
+			<a href='#transferencias' id='boton-tranferencias' data-transition="slide" class='center imgLogosTranferencias ui-btn-left ui-btn ui-shadow ui-btn-corner-all ui-btn-up-a'></a> 
+			<a href='#gestion-clave-inicial' id='boton-gestion-clave' data-transition="slide" class='rigth imgLogosGestionClaves ui-btn-left ui-btn ui-shadow ui-btn-corner-all ui-btn-up-a'></a>
+		</div>
+		</div>
+
+		<div data-role="content">
+		
+			<div id='cuentas' class='ui-content ui-scrollview-clip' data-role='content' data-scroll='y'>
+				<ul id="ul-cuentas" data-inset='true' data-role='listview'>
+					<li>
+						<h6>Cuentas</h6>
+					</li>
+				</ul>
+			</div>
+		
+			<div id='tarjetas' class='ui-content ui-scrollview-clip' data-role='content' data-scroll='y' role='main'>
+				<ul id="ul-tarjetas" data-inset='true' data-role='listview'>
+					<li>
+						<h6>Tarjetas</h6>
+					</li>
+
+
+				</ul>
+			</div>
+
+			<div id='plazos-fijos' class='ui-content ui-scrollview-clip' data-role='content' data-scroll='y' role='main'>
+				<ul id="ul-plazos-fijos" data-inset='true' data-role='listview'>
+					<li>
+						<h6>Plazos Fijos</h6>
+					</li>
+
+
+				</ul>
+			</div>
+
+			<div id='cuentas-custodios' class='ui-content ui-scrollview-clip' data-role='content' data-scroll='y' role='main'>
+				<ul id="ul-cuentas-custodios" data-inset='true' data-role='listview'>
+					<li>
+						<h6>Cuentas Custodios</h6>
+					</li>
+
+
+				</ul>
+			</div>
+
+			<div id='prestamos' class='ui-content ui-scrollview-clip' data-role='content' data-scroll='y' role='main'>
+				<ul id="ul-prestamos" data-inset='true' data-role='listview'>
+					<li>
+						<h6>Préstamos</h6>
+					</li>
+
+
+				</ul>
+			</div>
+
+		</div>
+	</div>
+	
+										<!--FIN POSICIONAMIENTO GLOBAL -->
+									
+										<!--GESTION DE CLAVES PAGINA INICIAL -->
+			
+	<div data-role='page' id='gestion-clave-inicial'>
+		<div data-position='fixed' data-role='header' data-tap-toggle="false" screen="true" style='position: fixed'>
+			<img class='imgLogoBBVA' src='assets/images/page-header-bbva.png' />
+			<div data-position='fixed' id='' class='recortes'  data-tap-toggle="false" screen="true" style='position: static;'>
+				<img class='recortes' src='assets/images/recorte-logo.png' />
+				<a href='#posicion-global' id='boton-posicion-global' data-transition="slide" class='left imgLogosPosicionGlobal ui-btn-left ui-btn ui-shadow ui-btn-corner-all ui-btn-up-a' ></a> 
+				<a href='#transferencias' id='boton-tranferencias' data-transition="slide" class='center imgLogosTranferencias ui-btn-left ui-btn ui-shadow ui-btn-corner-all ui-btn-up-a'></a> 
+				<a href='#gestion-clave-inicial' id='boton-gestion-clave' data-transition="slide" class='rigth imgLogosGestionClaves selectedGestionClaves ui-btn-left ui-btn ui-shadow ui-btn-corner-all ui-btn-up-a'></a>
+			</div>
+		</div>
+		
+		<h4>Gestión de Claves</h4>
+		<ul data-role="listview">
+			<li><a href="#gestion-clave" data-transition="slide">Clave Fránces</a></li>
+			<li><a href="#gestion-clave-PMC" data-transition="slide" >Clave PMC y Transferir</a></li>
+		</ul>
+
+	</div>					
+										<!--FIN GESTION DE CLAVES PAGINA INICIAL -->
+										
+										<!--GESTION CLAVE FRANCES	 -->
+	
+	<div data-role='page' id='gestion-clave'>
+		<div data-position='fixed' data-role='header' data-tap-toggle="false" screen="true" style='position: fixed'>
+			<img class='imgLogoBBVA' src='assets/images/page-header-bbva.png' />
+			<div data-position='fixed'  class='recortes'  data-tap-toggle="false" screen="true" style='position: static;'>
+				<img class='recortes' src='assets/images/recorte-logo.png' />
+				<a href='#posicion-global' id='boton-posicion-global' data-transition="slide" class='left imgLogosPosicionGlobal ui-btn-left ui-btn ui-shadow ui-btn-corner-all ui-btn-up-a' ></a> 
+				<a href='#transferencias' id='boton-tranferencias' data-transition="slide" class='center imgLogosTranferencias ui-btn-left ui-btn ui-shadow ui-btn-corner-all ui-btn-up-a'></a> 
+				<a href='#gestion-clave-inicial' id='boton-gestion-clave' data-transition="slide" class='rigth imgLogosGestionClaves selectedGestionClaves ui-btn-left ui-btn ui-shadow ui-btn-corner-all ui-btn-up-a'></a>
+			</div>
+		</div>
+
+		<h6>Clave Fránces</h6>
+		
+      	<div class='ui-content ui-scrollview-clip' data-role='content' data-scroll='y' role='main'>
+			
+			<form id="gestion-nueva-clave-form" name="gestion-nueva-clave-form">
+
+				<div data-mini='true' data-role='fieldcontain'>
+					<label data-mini='true' for='clave-actual'>Clave Francés actual</label> 
+					<input data-mini='true' id='clave-actual' name='claveActual' type='number' maxlength="4" max="4" value='' class="required" />
+				</div>
+				
+				<div data-mini='true' data-role='fieldcontain'>
+					<label data-mini='true' for='clave-nueva'>Nueva Clave Francés</label> 
+					<input data-mini='true' id='clave-nueva' name='claveNueva' type='number' maxlength="4" max="4" value='' class="required" />
+				</div>
+
+				<div data-mini='true' data-role='fieldcontain'>
+					<label data-mini='true' for='confirm-clave-nueva' class='ui-input-text'>Confirmar nueva Clave Francés</label> 
+					<input data-mini='true' id='clave-reingreso-nueva' name='claveReingresoNueva' type='number' maxlength="4" max="4" value='' class="required" />
+				</div>
+
+			</form>
+
+			<div class='submit'>
+				<a data-role='button' class='boton' id="cambio-clave-link" data-transition="slide" data-inline='true'>Aceptar</a>
+			</div>
+
+		</div>
+	</div>
+
+										<!-- FIN GESTION CLAVE FRANCES-->
+	
+										<!-- GESTION CLAVE RENOVAR OBLIGATORIO -->
+	<div data-role='page' id='gestion-clave-vencida'>
+		<div data-position='fixed' data-role='header' data-tap-toggle="false" screen="true" style='position: fixed'>
+			<img class='imgLogoBBVA' src='assets/images/page-header-bbva.png' />
+			<div data-position='fixed'  class='recortes'  data-tap-toggle="false" screen="true" style='position: static;'>
+				<img class='recortes' src='assets/images/recorte-logo.png' />
+				<a href='#posicion-global' id='boton-posicion-global' data-transition="slide" class='left imgLogosPosicionGlobal ui-btn-left ui-btn ui-shadow ui-btn-corner-all ui-btn-up-a ' ></a> 
+				<a href='#transferencias' id='boton-tranferencias' data-transition="slide" class='center imgLogosTranferencias ui-btn-left ui-btn ui-shadow ui-btn-corner-all ui-btn-up-a'></a> 
+				<a href='#gestion-clave-inicial' id='boton-gestion-clave' data-transition="slide" class='rigth imgLogosGestionClaves ui-btn-left ui-btn ui-shadow ui-btn-corner-all ui-btn-up-a'></a>
+			</div>
+		</div>
+
+		<h6>Clave Fránces</h6>
+		
+      	<div class='ui-content ui-scrollview-clip' data-role='content' data-scroll='y' role='main'>
+			
+			<form id="gestion-nueva-clave-vencida-form" name="gestion-nueva-clave-vencida-form">
+
+				<div data-mini='true' data-role='fieldcontain'>
+					<label data-mini='true' for='clave-vencida-actual'>Clave Francés actual</label> 
+					<input data-mini='true' id='clave-vencida-actual' name='claveActual' type='number' maxlength="4" max="4" value='' class="required" />
+				</div>
+				
+				<div data-mini='true' data-role='fieldcontain'>
+					<label data-mini='true' for='clave-vencida-nueva'>Nueva Clave Francés</label> 
+					<input data-mini='true' id='clave-vencida-nueva' name='claveNueva' type='number' maxlength="4" max="4" value='' class="required" />
+				</div>
+
+				<div data-mini='true' data-role='fieldcontain'>
+					<label data-mini='true' for='confirm-clave-vencida-nueva' class='ui-input-text'>Confirmar nueva Clave Francés</label> 
+					<input data-mini='true' id='clave-reingreso-vencida-nueva' name='claveReingresoNueva' type='number' maxlength="4" max="4" value='' class="required" />
+				</div>
+
+			</form>
+
+			<div class='submit'>
+				<a data-role='button' class='boton' id="cambio-clave-vencida-link" data-transition="slide" data-inline='true'>Aceptar</a>
+			</div>
+
+		</div>
+	</div>
+	
+										<!-- FIN GESTION CLAVE RENOVAR OBLIGATORIO -->
+											
+										<!-- GESTION CLAVE PMC -->
+												
+	<div data-role='page' id='gestion-clave-PMC'>
+		<div data-position='fixed' data-role='header' data-tap-toggle="false" screen="true" style='position: fixed'>
+			<img class='imgLogoBBVA' src='assets/images/page-header-bbva.png' />
+			<div data-position='fixed'  class='recortes'  data-tap-toggle="false" screen="true" style='position: static;'>
+				<img class='recortes' src='assets/images/recorte-logo.png' />
+				<a href='#posicion-global' id='boton-posicion-global' data-transition="slide" class='left  imgLogosPosicionGlobal ui-btn-left ui-btn ui-shadow ui-btn-corner-all ui-btn-up-a' ></a> 
+				<a href='#transferencias' id='boton-tranferencias' data-transition="slide" class='center imgLogosTranferencias ui-btn-left ui-btn ui-shadow ui-btn-corner-all ui-btn-up-a'></a> 
+				<a href='#gestion-clave-inicial' id='boton-gestion-clave' data-transition="slide" class='rigth imgLogosGestionClaves ui-btn-left ui-btn ui-shadow ui-btn-corner-all ui-btn-up-a'></a>
+			</div>
+		</div>
+
+		<h6>Clave Fránces</h6>
+		
+      	<div class='ui-content ui-scrollview-clip' data-role='content' data-scroll='y' role='main'>
+			
+			<form id="gestion-nueva-clave-form" name="gestion-nueva-clave-PMC-form">
+
+				<div data-mini='true' data-role='fieldcontain'>
+					<label data-mini='true' for='clave-actual'>Clave PMC y Transferir actual</label> 
+					<input data-mini='true' id='clave-actual' name='claveActual' type='number' maxlength="8" max="8" value='' class="required" />
+				</div>
+				
+				<div data-mini='true' data-role='fieldcontain'>
+					<label data-mini='true' for='clave-nueva'>Nueva Clave PMC y Transferir</label> 
+					<input data-mini='true' id='clave-nueva' name='claveNueva' type='number' maxlength="8" max="8" value='' class="required" />
+				</div>
+
+				<div data-mini='true' data-role='fieldcontain'>
+					<label data-mini='true' for='confirm-clave-nueva' class='ui-input-text'>Confirmar nueva Clave PMC y Transferir</label> 
+					<input data-mini='true' id='clave-reingreso-nueva' name='claveReingresoNueva' type='number' maxlength="8" max="8" value='' class="required" />
+				</div>
+
+			</form>
+
+			<div class='submit'>
+				<a data-role='button' class='boton' id="cambio-clave-PMC-link" data-transition="slide" data-inline='true'>Aceptar</a>
+			</div>
+
+		</div>
+	</div>
+	
+										<!-- FIN GESTION CLAVE PMC -->
+										
+										
+										<!--DIALOGO LINK CONFIRMAR CLAVE VENCIDA -->
+
+
+	<div data-role='page' id="dialog-mensaje-cambio-clave-vencida">
+		<div id='datos-cambio-clave-vencida' class='background'>
+		
+		</div>
+	</div>
+	
+	<div data-role='page' id="dialog-mensaje-cambio-clave">
+		<div id='datos-cambio-clave' class='background'>
+		
+		</div>
+	</div>
+	
+	<div data-role='page' id="dialog-mensaje-cambio-clave-PMC">
+		<div id='datos-cambio-clave-PMC' class='background'>
+		
+		</div>
+	</div>
+	
+	
+										<!--FIN DIALOGO LINK CONFIRMAR CLAVE VENCIDA -->
+										<!-- VER CUENTA -->
+
+<!-- 	<div data-role='page' id='ver-movimientos-cuenta'> -->
+<!-- 		<img class='imgLogoBBVA' src='assets/images/page-header-bbva.png' /> -->
+<!-- 		<div id="cuenta-view" class='ui-content ui-scrollview-clip show show-cuenta' data-role='content' data-scroll='y' role='main'> -->
+<!-- 			<div> -->
+<!-- 				<div id='cuenta-title' class="title"> -->
+				
+<!-- 				</div> -->
+<!-- 				<div class='ui-content ui-scrollview-clip' data-role='content' data-scroll='y' role='main'> -->
+<!-- 					<ul id="ul-movimientos-cuenta" data-inset='true' data-role='listview'> -->
+
+
+
+<!-- 					</ul> -->
+
+<!-- 				</div> -->
+				
+<!-- 				<a data-role='button' class='boton' id='link-ver-movimientos-anteriores-cuenta'>Ver movimientos anteriores</a> -->
+<!-- 				<a data-role='button' class='boton' id='link-ver-mas-movimientos-cuenta'>Ver más movimientos</a> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
+<!-- 	</div> -->
+	
+<!-- 	<div data-role='page' id='ver-movimiento-cuenta'> -->
+<!-- 		<img class='imgLogoBBVA' src='assets/images/page-header-bbva.png' /> -->
+<!-- 		<div class='ui-content ui-scrollview-clip show show-cuenta' data-role='content' data-scroll='y' role='main'> -->
+<!-- 			<div> -->
+<!-- 				<div id='cuenta-title' class="title"> -->
+				
+<!-- 				</div> -->
+<!-- 				<div class='ui-content ui-scrollview-clip' data-role='content' data-scroll='y' role='main'> -->
+<!-- 					<ul id="ul-movimientos-cuenta" data-inset='true' data-role='listview'> -->
+
+
+
+<!-- 					</ul> -->
+
+<!-- 				</div> -->
+				
+<!-- 				<a data-role='button' class='boton' id='link-ver-movimientos-anteriores-cuenta'>Ver movimientos anteriores</a> -->
+<!-- 				<a data-role='button' class='boton' id='link-ver-mas-movimientos-cuenta'>Ver más movimientos</a> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
+<!-- 	</div> -->
 </body>
 	<script type="text/javascript">
-	
-		baseUrl = '';
-//		baseUrl = 'http://192.168.1.105:8080/francesGo2-portal/mobile/';
-//	   	baseUrl =  'https://bbvawebqa.bancofrances.com.ar/francesGo2-portal/mobile/';
-	  	baseUrl = 'http://m.francesgo.com.ar/francesGo2-Portal/mobile/';
-	  		
 		$(document).ready(function() {
-			
-			$('#findProv').live('click',function(){
-				
-				var callBack = function(data){
-					
-					data.regionesOrdenables[0].forEach(function(item) {
-						
-						insertDataProv(item);
-						
-					})
-					
-					
-				}
-				
-// 				var url = 'http://localhost:8080/francesGo2-portal/mobile/mobile-initialization.json'
-				var url = 'http://m.francesgo.com.ar/francesGo2-Portal/mobile/mobile-initialization.json'
-// 				var url = baseUrl + 'mobile-initialization.json';
-			    
-// 				checkNavigator(url, callBack, null);
-				
-				$.ajax({url:url, type:'GET' ,data:null,cache: false, success: callBack, error: function(jqXHR, textStatus, errorThrown) {
-					alert("error on: " + textStatus + ", "+ errorThrown);  
-					
-					console.log(textStatus, errorThrown);
-				}});
-					$.mobile.hidePageLoadingMsg();
-			})
-			
-			$('#findLoc').live('click',function(){
-				
-				var callBack = function(data){
-					
-					data.result.forEach(function(item) {
-						
-						insertDataLoc(item);
-						
-					})
-					
-					$.mobile.hidePageLoadingMsg();
-					
-				}
-				
-				var url = 'http://localhost:8080/francesGo2-portal/exportador-planilla.json'
-				
-				var data = {}
-				
-				data.action = 'getLocalidades';
-				
-				checkNavigator(url,callBack,data);
-				
-				$.ajax({url:url, type:'POST', data:data, cache: false, success: callBack, error: function(jqXHR, textStatus, errorThrown) {
-					alert("error on: " + textStatus + ", "+ errorThrown);  
-					
-					console.log(textStatus, errorThrown);
-				}});
-			})
-			
-			$('#findBar').live('click',function(){
-				
-				var callBack = function(data){
-					
-					data.result.forEach(function(item) {
-						
-						insertDataBarrio(item);
-						
-					})
-				}
-					
-				var url = 'http://localhost:8080/francesGo2-portal/exportador-planilla.json'
-				
-				var data = {};
-				
-				data.action = 'getBarrios';
-				
-				checkNavigator(url,callBack,data);
-				
-				$.ajax({url:url, type:'POST', data:data, cache: false, success: callBack, error: function(jqXHR, textStatus, errorThrown) {
-					alert("error on: " + textStatus + ", "+ errorThrown);  
-					
-					console.log(textStatus, errorThrown);
-				}});
-				
-				$.mobile.hidePageLoadingMsg();
-					
-			})
-			
+			try {
+
+				bancaMovilRegisterEvents();
+			} catch (e) {
+				console.log('start bancaMovilRegisterEvents error', e);
+
+			}
 		});
-		
 	</script>
 </html>
