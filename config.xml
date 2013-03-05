@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns		= "http://www.w3.org/ns/widgets"
+		xmlns:gap	= "http://phonegap.com/ns/1.0"
+		xmlns:rim	="http://www.blackberry.com/ns/widgets"
+		id		= "ar.com.bbva.francesgo.frontend.mobile"
+		version 	= "0.0.1">
+
+	<name>BBVA FRANCES</name>
+
+	<description>
+		Frances Mobile Client for BVBA Frances Argentina
+	</description>
+
+	<author href="http://www.artdecode.com.ar"
+		email="emilio.alberdi@artdecode.com.ar">
+		BBVA Banco Frances
+	</author>
+	
+	
+	<icon src="icon.png" gap:role="default" />
+	<icon src="assets/images/icons/ios/icon_57x57.png" width="57" height="57" />
+	<icon src="assets/images/icons/ios/icon_72x72.png" gap:platform="ios" width="72" height="72" />
+	<icon src="assets/images/icons/ios/icon_114x114.png" width="114" height="114" />
+	<icon src="assets/images/icons/android/icon_48x48.png" gap:platform="android" gap:density="mdpi" />
+	<icon src="assets/images/icons/android/icon_72x72.png" gap:platform="android" gap:density="hdpi" />
+	<icon src="assets/images/icons/android/icon_96x96.png" gap:platform="android" gap:density="xhdpi" />
+	<icon src="assets/images/icons/blackberry/icon.png" gap:platform="blackberry" />
+	<icon src="assets/images/icons/blackberry/icon_hover.png" gap:platform="blackberry" gap:state="hover"/>
+	
+	<feature id="blackberry.ui.Spinner" />
+	<feature id="blackberry.push" />
+	<feature id="blackberry.ui.menu" />
+ 	<feature id="blackberry.system" required="true" version="1.0.0.0" />
+ 	<feature id="phonegap" required="true" version="1.0.0" />
+  	<feature id="blackberry.find" required="true" version="1.0.0.0" />
+  	<feature id="blackberry.io.file" required="true" version="1.0.0.0" />
+  	<feature id="blackberry.utils" required="true" version="1.0.0.0" />
+  	<feature id="blackberry.io.dir" required="true" version="1.0.0.0" />
+  	<feature id="blackberry.app" required="true" version="1.0.0.0" />
+  	<feature id="blackberry.app.event" required="true" version="1.0.0.0" />
+	<feature id="blackberry.ui.dialog" required="true" version="1.0.0"/>
+
+    <access subdomains="true" origin="*" uri="*"/>
+    <access subdomains="true" uri="http://francesgo.com.ar"/>
+	<access subdomains="true" uri="http://m.francesgo.com.ar"/>
+  	<access subdomains="true" uri="http://m.francesgo.com.ar/francesGo2-Portal/mobile/"/>
+  	<access subdomains="false" uri="http://m.francesgo.com.ar/francesGo2-Portal/*"/>
+  	<access subdomains="true" uri="http://m.francesgo.com.ar/francesGo2-Portal/"/>
+  	<access subdomains="true" uri="http://m.francesgo.com.ar/francesGo2-Portal/exportador-planilla.json"/>
+    <access origin="http://chart.apis.google.com" subdomains="true" />
+	
+  	<access subdomains="true" uri="file:///store/home" />
+  	<access subdomains="true" uri="file:///SDCard" />
+	  
+  	<rim:permissions>
+	    <rim:permit>read_geolocation</rim:permit>
+  	</rim:permissions>
+		
+	<gap:splash src="splash.png" />
+
+	<feature name="http://api.phonegap.com/1.0/geolocation"/>
+	<feature name="http://api.phonegap.com/1.0/network"/>
+
+	<preference name="orientation" value="portrait" />
+</widget>

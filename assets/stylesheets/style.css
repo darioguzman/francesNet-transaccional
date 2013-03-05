@@ -1,0 +1,462 @@
+a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,dialog,div,dl,dt,em,embed,fieldset,figcaption,figure,font,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,hr,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,meter,nav,object,ol,output,p,pre,progress,q,rp,rt,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video,xmp
+	{
+	border: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 100%
+}
+
+html,body {
+	height: 100%
+}
+
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section
+	{
+	display: block
+}
+
+b,strong {
+	font-weight: bold
+}
+
+img {
+	color: transparent;
+	font-size: 0;
+	vertical-align: middle;
+	-ms-interpolation-mode: bicubic
+}
+
+li {
+	display: list-item
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0
+}
+
+th,td,caption {
+	font-weight: normal;
+	vertical-align: top;
+	text-align: left
+}
+
+svg {
+	overflow: hidden
+}
+
+body {
+	font: 13px/1.5 "Helvetica Neue", Arial, "Liberation Sans", FreeSans,
+		sans-serif
+}
+
+pre,code {
+	font-family: 'DejaVu Sans Mono', Monaco, Consolas, monospace
+}
+
+hr {
+	border: 0 #ccc solid;
+	border-top-width: 1px;
+	clear: both;
+	height: 0
+}
+
+h1 {
+	font-size: 25px
+}
+
+h2 {
+	font-size: 23px;
+	color: #0099FF;
+}
+
+h3 {
+	font-size: 21px;
+	
+}
+
+h4 {
+	font-size: 19px;
+	color: #0099FF;
+}
+
+h5 {
+	font-size: 17px;
+	text-align: center;
+}
+
+h6 {
+	font-size: 15px;
+	color: #0099FF;
+}
+h7{
+	font-size: 10px;
+	color: #0099FF;
+}
+
+ol {
+	list-style: decimal
+}
+
+ul {
+	list-style: disc
+}
+
+li {
+	margin-left: 30px
+}
+
+p,dl,hr,h1,h2,h3,h4,h5,h6,ol,ul,pre,table,address,fieldset,figure {
+	margin-bottom: 20px
+}
+
+.background{
+	background-color:black;
+	color: transparent;
+}
+
+.imgLogoBBVA{
+	width:100%;
+	max-height: 50px;
+}
+.imgLogosPosicionGlobal{
+    background: url("../images/posicion-global.png") no-repeat scroll 50% 50% transparent;
+    display: block;
+    height: 40px;
+    width: 32.2%;
+}
+
+.selectedPosicionGlobal{
+	background: url("../images/posicion-global-select.png") no-repeat scroll 50% 50% white;
+}
+
+.imgLogosTranferencias{
+    background: url("../images/tranferencias.png") no-repeat scroll 50% 50% transparent;
+    display: block;
+    height: 40px;
+    width: 32.2%;
+}
+
+.recortes{
+	background: url("../images/recorte-logo.png") repeat scroll 0 0 transparent;
+	margin-right: -3%;
+}
+
+.selectedTranferencias{
+	background: url("../images/tranferencias-select.png") no-repeat scroll 50% 50% white;
+}
+
+
+.imgLogosGestionClaves{
+    background: url("../images/gestion-clave.png") no-repeat scroll 50% 50% transparent;
+    display: block;
+    height: 40px;
+    width: 32.2%;
+}
+
+.selectedGestionClaves{
+	background: url("../images/gestion-clave-select.png") no-repeat scroll 50% 50% white;
+}
+
+.boton{
+    background: none repeat scroll 0 0 blue;
+    border: 1px solid black;
+    color: transparent;
+    display: inline-block;
+    margin-left: 40%;
+    position: static;
+    top: 15%;
+}
+.clear {
+	clear: both;
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+	height: 0
+}
+
+.clearfix:before,.clearfix:after {
+	content: '\0020';
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+	height: 0
+}
+
+.clearfix:after {
+	clear: both
+}
+
+.clearfix {
+	zoom: 1
+}
+
+#footer .ui-icon {
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	border-radius: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	width: 20px;
+	height: 20px
+}
+
+#footer .ui-icon-myapp-descuentos {
+	background: url("/images/icons/descuentos.png") no-repeat !important
+}
+
+#footer .ui-icon-myapp-cajeros {
+	background: url("/images/icons/cajeros.png") no-repeat !important
+}
+
+#footer .ui-icon-myapp-sucursales {
+	background: url("/images/icons/sucursales.png") no-repeat !important
+}
+
+#footer .ui-icon-myapp-mas {
+	background: url("/images/icons/mas.png") no-repeat !important
+}
+
+#footer .ui-header .ui-btn-inner,#footer .ui-footer .ui-btn-inner,#footer .ui-mini .ui-btn-inner
+	{
+	font-size: 10px;
+	padding: .55em 0em .5em
+}
+
+#footer .ui-header .ui-btn-inner,#footer .ui-footer .ui-btn-inner,#footer .ui-mini .ui-btn-inner
+	{
+	padding: .55em 0 .5em
+}
+
+#footer .ui-btn-text {
+	font-size: 9px;
+	text-overflow: ellipsis;
+	overflow: visible;
+	white-space: normal
+}
+
+
+ #objects-mapa-mapa { height: 100% }
+ 
+ .rigth{
+ 	float: left
+ }
+ 
+ .left{
+ 	float: left
+ }
+ 
+ .center{
+ 	float: left
+ }
+ 
+.show {
+	padding: 0
+}
+
+.show .padding {
+	padding: 15px
+}
+
+.show p {
+	margin-bottom: 5px
+}
+
+.show p.desc {
+	border-bottom: 1px solid #EAEAEA;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+	font-size: 14px
+}
+
+.show .mapa a.see {
+	padding: 0 15px
+}
+
+.show .mapa .map {
+	margin-top: 10px;
+	width: 100%;
+	height: 200px
+}
+
+.show .mapa .map.with-banner {
+	height: 140px
+}
+
+.show-cuenta .title-image {
+	position: relative
+}
+
+.show-cuenta .title-image .title {
+	padding: 10px;
+/* 	background: rgba(0, 0, 0, 0.8); */
+	width: 100%;
+	background: #E7E6E4;
+	background: -webkit-gradient(linear, 0 0, 0 bottom, from(#E7E6E4), to(#CBCBCB));
+	background: -moz-linear-gradient(#E7E6E4, #CBCBCB);
+	background: linear-gradient(#E7E6E4, #CBCBCB);
+	-pie-background: linear-gradient(#E7E6E4, #CBCBCB);
+}
+
+.show-cuenta .title-image .title h1 {
+	color: #0088DA;
+    font-size: 19px;
+    font-weight: normal;
+    margin: -34px 0 0 582px;
+    text-shadow: 1px 1px black;
+}
+
+.show-cuenta .title-image .image {
+	min-height: 133px
+}
+
+
+.imgLogoFrances{
+	 color: transparent;
+    font-size: 0;
+    margin-left: 0px;
+    vertical-align: middle;
+}
+
+.show-cuenta .legales a:hover {
+	background: #666;
+	color: white
+}
+
+#index .content {
+	padding-top: 0
+}
+
+#index ul li h3 {
+	font-size: 14px;
+	margin: 0;
+	line-height: 20px
+}
+
+#index ul li p {
+	margin: 0
+}
+
+#index ul li a {
+	padding-top: 5px;
+	padding-bottom: 5px
+}
+
+.show-cajero .image {
+	float: left
+}
+
+.show-cajero .image img {
+	width: 80px
+}
+
+.show-cajero .description {
+	margin-left: 10px;
+	float: left
+}
+
+.show-map {
+	padding: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.show-map .map {
+	width: 100%;
+	height: 100%;
+	min-height: 310px
+}
+
+.indexes .filter {
+	background: #0081BF;
+	height: 19px;
+	padding: 10px;
+	text-shadow: none
+}
+
+.indexes .ui-li-aside {
+	width: 20%;
+	margin-right: 10px;
+	color: #26b7ec;
+	font-weight: bold
+}
+
+.indexes.benefits .ui-li-has-thumb .ui-btn-inner a.ui-link-inherit,.indexes.benefits .ui-li-static.ui-li-has-thumb
+	{
+	padding-left: 52px
+}
+
+.ui-bar-e {
+	border: none
+}
+
+.ui-li-aside-style {
+    float: right;
+    margin: 0.3em 0;
+    text-align: right;
+    width: 50%;
+}
+.ui-li-desc-style {
+   display: block;
+    font-size: 10px;
+    font-weight: normal;
+    margin: -2.5em 0.3em 0.6em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: pre-wrap;
+}
+
+.ui-li-desc-big {
+    display: block;
+    font-size: 17px;
+    font-weight: normal;
+    margin: 1.5em 0 0.6em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ui-li-heading-big{
+	display: block;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0.6em -25em 0.6em 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 250px;
+}
+
+#map_canvas img {
+	max-width: none
+}
+
+#infowindow_content h4 {
+	font-size: 13px;
+	margin-bottom: 2px
+}
+
+#infowindow_content p {
+	font-size: 12px;
+	line-height: 1;
+	font-weight: normal
+}
+
+table.registracion {
+	width: 50%;
+	border-collapse: collapse;
+}
+
+th.registracion,td.registracion {
+	vertical-align: top;
+	padding: 4px 10px;
+}
+
+img.beneficio-icon {
+	padding: 5px;
+	width: 30px;
+	height: 30px;
+}
