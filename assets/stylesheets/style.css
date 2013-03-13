@@ -409,6 +409,13 @@ p,dl,hr,h1,h2,h3,h4,h5,h6,ol,ul,pre,table,address,fieldset,figure {
     white-space: pre-wrap;
 }
 
+.ui-li-aside-style{
+    float: right;
+    margin: -2em 0;
+    text-align: right;
+    width: 45%;
+}
+
 .ui-li-desc-big {
     display: block;
     font-size: 17px;

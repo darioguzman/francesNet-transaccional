@@ -19,11 +19,11 @@ baseUrlLocal = 'http://192.168.1.107:8080/francesGo2-portal/';
 
 	console.log('start bancaMovilRegisterEvents ');
 	
-	$('#cuentas').hide();
-	$('#tarjetas').hide();
-	$('#plazos-fijos').hide();
-	$('#cuentas-custodios').hide();
-	$('#prestamos').hide();
+	$('#ul-cuentas').hide();
+	$('#ul-tarjetas').hide();
+	$('#ul-plazos-fijos').hide();
+	$('#ul-cuentas-custodios').hide();
+	$('#ul-prestamos').hide();
 
 	var callback = function(data) {
 
@@ -563,14 +563,14 @@ baseUrlLocal = 'http://192.168.1.107:8080/francesGo2-portal/';
 			switch (item.grupo) {
 				case 0: {
 					console.log('Show this item (cuenta): ' + item.nombre);
-					$('#cuentas').show();
+					$('#ul-cuentas').show();
 					showCuenta(item);
 					break;
 				}
 				case 1: {
 					if(item.nombre != 'Visa Mini'){
 						console.log('Show this item (tarjeta): ' + item.nombre);
-						$('#tarjetas').show();
+						$('#ul-tarjetas').show();
 						showTarjeta(item);
 						break;
 					}else{
@@ -580,19 +580,19 @@ baseUrlLocal = 'http://192.168.1.107:8080/francesGo2-portal/';
 				}
 				case 2: {
 					console.log('Show this item (plazo fijo): ' + item.nombre);
-					$('#plazos-fijos').show();
+					$('#ul-plazos-fijos').show();
 					showPlazoFijo(item);
 					break;
 				}
 				case 3: {
 					console.log('Show this item (cuenta custodio): ' + item.nombre);
-					$('#cuentas-custodios').show();
+					$('#ul-cuentas-custodios').show();
 					showCuentaCustodio(item);
 					break;
 				}
 				case 4: {
 					console.log('Show this item (prestamo): ' + item.nombre);
-					$('#prestamos').show();
+					$('#ul-prestamos').show();
 					showPrestamo(item);
 					break;
 				}
@@ -626,14 +626,14 @@ function showCuenta(cuenta){
 	 
 	 console.log(cuentaDescripcion);
 	 $("#ul-cuentas").append("" +
-				"<li>" +
-					"<a id='cuenta-" + cuentaDescripcion + "' >" +
+				"<li id='cuenta-" + cuentaDescripcion + "'>" +
+//					"<a id='cuenta-" + cuentaDescripcion + "' >" +
 							"<span class=''>" +
 								"<h7 class='ui-li-heading'>" + cuenta.nombre + "</h7>" +
-								"<p id='cuenta-" + cuentaDescripcion + "-saldo' class='ui-li-aside ui-li-desc'>" + cuenta.moneda + " "+ cuenta.saldo + "</p>" +
+								"<p id='cuenta-" + cuentaDescripcion + "-saldo' class='ui-li-aside-style ui-li-desc'>" + cuenta.moneda + " "+ cuenta.saldo + "</p>" +
 								"<p>" + cuenta.descripcion + " " + cuentaAlias  +"</p>" +
 							"</span>" +
-					"</a>" +
+//					"</a>" +
 				"</li>") ;
 	 
 	 
@@ -683,15 +683,15 @@ function showCuenta(cuenta){
 	 var tarjetaAlias = (tarjeta.alias) ? tarjeta.alias : "Sin alias";
 	 
 	 $("#ul-tarjetas").append("" +
-				"<li>" +
-					"<a id='tarjeta-" + tarjetaDescripcion + "' >" +
+				"<li id='tarjeta-" + tarjetaDescripcion + "' >" +
+//					"<a >" +
 							"<span class=''>" +
 								"<h7 class='ui-li-heading'>" + tarjeta.nombre +"</h7>" +
 								"<p id='tarjeta-" + tarjetaDescripcion + "-saldoPesos' class='ui-li-aside ui-li-desc'> $ " +  tarjeta.saldoPesos  + "</p>" +
 								"<p>" + tarjeta.descripcion +"-"+ tarjetaAlias + "</p>"+
 								"<p id='tarjeta-" + tarjetaDescripcion + "-saldoDolar' class='ui-li-aside-style ui-li-desc-style'> U$S " +  tarjeta.saldoDolar  + "</p>" +
 							"</span>" +
-					"</a>" +
+//					"</a>" +
 				"</li>") ;
 		$("#tarjeta-" + tarjetaDescripcion).data("tarjeta", tarjeta);
 
@@ -714,15 +714,15 @@ function showCuenta(cuenta){
 	
 	$("#ul-plazos-fijos").append("" +
 			
-			"<li>" +
-			"<a id='plazo-fijo-" + plazoFijoDescripcion + "' >" +
+			"<li id='plazo-fijo-" + plazoFijoDescripcion + "'>" +
+//			"<a  >" +
 					"<span class=''>" +
 						"<h7 class='ui-li-heading'>" + plazoFijo.nombre + " " + plazoFijo.moneda + "</h7>" +
 						"<p id='plazo-fijo-" + plazoFijoDescripcion + "-vencimiento' class='ui-li-aside ui-li-desc'> Vto: " +  vencimiento + "</p>" +
 						"<p>" + plazoFijo.descripcion +"-"+ plazoFijoAlias + "</p>"+
 						"<p id='plazo-fijo-" + plazoFijoDescripcion + "-capitalOrigen' class='ui-li-aside-style ui-li-desc-style'> Capital Origen " + plazoFijo.moneda +  plazoFijo.capitalOrigen + "</p>" +
 					"</span>" +
-			"</a>" +
+//			"</a>" +
 		"</li>") ;
 
 	$("#plazo-fijo-" + plazoFijoDescripcion).data("plazoFijo", plazoFijo);
@@ -745,13 +745,13 @@ function showCuentaCustodio(cuentaCustodio){
 	
 	$("#ul-cuentas-custodios").append("" +
 			
-			"<li>" +
-			"<a id='cuenta-custodio-" + cuentaCustodioDescripcion + "' >" +
+			"<li id='cuenta-custodio-" + cuentaCustodioDescripcion + "'>" +
+//			"<a  >" +
 					"<span class=''>" +
 						"<h7 class='ui-li-heading'>" + cuentaCustodio.nombre +"</h7>" +
 						"<p>" + cuentaCustodio.descripcion +"-"+ cuentaCustodioAlias + "</p>" +
 					"</span>" +
-			"</a>" +
+//			"</a>" +
 			"</li>") ;
 			
 	$("#cuenta-custodio-" + cuentaCustodioDescripcion ).data("cuentaCustodio", cuentaCustodio);
@@ -772,8 +772,8 @@ function showPrestamo(prestamo){
 	
 	 $("#ul-prestamos").append("" +
 			 
-			 "<li>" +
-			 "<a id='prestamo-" + prestamo.descripcion + "' >" +
+			 "<li id='prestamo-" + prestamo.descripcion + "'>" +
+//			 "<a  >" +
 						"<span class=''>" +
 							"<h7 class='ui-li-heading'>" + prestamo.nombre +"</h7>" +
 							"<p id='prestamo-" + prestamo.descripcion + "-monto' class='ui-li-aside ui-li-desc'> " + prestamo.moneda +" "+  prestamo.montoCuota +"</p>" +
@@ -957,7 +957,6 @@ function callAjax(url, data, callback){
 			success : callback,
 			error : function(jqXHR, textStatus,	errorThrown) {
 				$.mobile.loading('hide');
-				alert("textStatus: "+ textStatus+ ", errorThrown: "+ errorThrown);
 				console.log("textStatus: "+ textStatus+ ", errorThrown: "+ errorThrown);
 			}
 		});
