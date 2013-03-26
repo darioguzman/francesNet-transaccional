@@ -1,11 +1,9 @@
 //baseUrl = 'http://localhost:8080/francesNet-transaccional/mod/mobile/';
-//baseUrl = 'https://bbvawebqa.bancofrances.com.ar/fnet/mod/mobile/';
-baseUrl = 'http://192.168.1.107:8080/francesNet-transaccional/mod/mobile/';
-baseUrl = 'http://m.francesgo.com.ar/francesNet-transaccional/mod/mobile/';
-//baseUrlLocal = 'http://192.168.1.107:8080/francesGo2-portal/';
-//baseUrlLocal = 'http://localhost:8080/francesGo2-portal/';
-//baseUrlLocal = 'https://bbvawebqa.bancofrances.com.ar/francesGo2-portal/
-baseUrlLocal = 'http://m.francesgo.com.ar/francesGo2-Portal/;
+baseUrl = 'https://bbvawebqa.bancofrances.com.ar/fnet/mod/mobile/';
+//baseUrl = 'http://192.168.1.107:8080/francesNet-transaccional/mod/mobile/';
+baseUrlLocal = 'https://bbvawebqa.bancofrances.com.ar/fnet/xml/mobile/';
+//	baseUrlLocal = 'http://m.francesgo.com.ar/francesNet-transaccional/mod/mobile/';
+
 	
    	$( document ).bind( "mobileinit", function() {
 	    // Make your jQuery Mobile framework configuration changes here!
@@ -14,6 +12,9 @@ baseUrlLocal = 'http://m.francesgo.com.ar/francesGo2-Portal/;
 	    $.mobile.page.prototype.options.addBackBtn = true;
 		
 	});
+   	
+   	var $lineaFrances ;
+   	var $reglasValidacionClave = {};
    	
  function bancaMovilRegisterEvents() {
 
@@ -25,29 +26,43 @@ baseUrlLocal = 'http://m.francesgo.com.ar/francesGo2-Portal/;
 	$('#ul-cuentas-custodios').hide();
 	$('#ul-prestamos').hide();
 
-	var callback = function(data) {
-
-		data.respuesta.tiposDocumento.forEach(function(tipoDocumento) {
-			$('#login-tiposDocumento').append(
-					"<option value='" + tipoDocumento.descripcionLarga + "'>"
-							+ tipoDocumento.descripcionLarga + "</option>");
-		});
-
-		$("#login-tiposDocumento").selectmenu('refresh', true);
-	};
-	
-	var url = baseUrlLocal + 'tipo-documento-listar.json';
+	var url = baseUrlLocal + 'InfoBancaMobile.xml';
 
 	$.ajax({
-		url : url,
-		type : 'GET',
-		cache : false,
-		success : callback,
-		error : function(jqXHR, textStatus, errorThrown) {
-			$.mobile.hidePageLoadingMsg();
-			console.log(textStatus, errorThrown);
-		}
-	});
+		  type: 'GET',
+		  url: url,
+		  cache: false,
+		  dataType: 'xml', 
+		  success: function(data){
+		    var xml;
+		      xml = data;
+
+			    $(xml).find('login').each(function() {
+						$(this).find('tipoDoc').each(function() {
+
+									var value = $(this).attr('codigo');
+									var descripcion = $(this).attr('descripcion');
+
+									$('#login-tiposDocumento').append("<option value='" + value	+ "'>" + descripcion + "</option>");
+
+								});
+
+						$("#login-tiposDocumento").selectmenu('refresh', true);
+
+						$(this).find('lineaFrances').each(function() {
+							$lineaFrances = $(this).text();
+						});
+						
+						$(this).find('clave').each(function() {
+							$reglasValidacionClave.longitud = $(this).attr('longitud');
+							$reglasValidacionClave.tipo = $(this).attr('tipo');
+						});
+						
+					});
+		  }
+		});
+	
+	
 	
 	$("#login-confirmation-link").click(function(e){
 		try {
